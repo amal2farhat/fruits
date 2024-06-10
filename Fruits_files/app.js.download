@@ -1,0 +1,85 @@
+let inputfruit=document.getElementById('fruitorlegume');
+// let radio1=document.getElementById('radio1');
+// let radio2=document.getElementById('fruitorlegume');
+var radios = document.getElementsByName('exampleRadios');
+
+var fruit=document.getElementById('fruit');
+var legume=document.getElementById('legume');
+var fruitorlegumediv=document.getElementById('fruitorlegumediv');
+
+
+document.getElementById('addspecificlist').addEventListener("click", () => {
+   
+        // Get radio buttons by name
+        var radios = document.getElementsByName('exampleRadios');
+        
+        // Variable to store whether radio is checked
+        var radioChecked = false;
+  
+        // Loop through radio buttons to check if any is checked
+        for (var i = 0; i < radios.length; i++) {
+          if (radios[i].checked) {
+            radioChecked = true;
+            break;
+          }
+        }
+  
+        // Get the input field value
+        var inputfruit = document.getElementById('fruitorlegume').value;
+  
+        // Check if both radio button and input field are checked/selected
+        if (radioChecked && inputfruit.trim() !== '') {
+            if(radios[0].checked){
+                let data=`  <div class="alert alert-success" role="alert">
+            <span>${inputfruit}</span></div>`;
+            fruit.innerHTML +=data;        
+            }else{
+                let data=`  <div class="alert alert-info" role="alert">
+                <span>${inputfruit}</span></div>`;
+                legume.innerHTML +=data;
+            }
+           
+        
+
+
+        } else {
+          alert('Please make sure that you enter all details.');
+        }
+      
+})
+
+document.getElementById('addgenerallist').addEventListener("click", () => {
+   
+    // Get radio buttons by name
+    var radios = document.getElementsByName('exampleRadios');
+    
+    // Variable to store whether radio is checked
+    var radioChecked = false;
+
+    // Loop through radio buttons to check if any is checked
+    for (var i = 0; i < radios.length; i++) {
+      if (radios[i].checked) {
+        radioChecked = true;
+        break;
+      }
+    }
+
+    // Get the input field value
+    var inputfruit = document.getElementById('fruitorlegume').value;
+
+    // Check if both radio button and input field are checked/selected
+    if (radioChecked && inputfruit.trim() !== '') {
+        // if(radios[0].checked ){
+            let data=`  <div class="alert alert-warning" role="alert">
+        <span>${inputfruit}</span></div>`;
+        fruitorlegumediv.innerHTML +=data;        
+        // }
+       
+    
+
+
+    } else {
+      alert('Please make sure that you enter all details.');
+    }
+  
+})
