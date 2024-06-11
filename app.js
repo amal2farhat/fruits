@@ -24,17 +24,19 @@ document.getElementById('addspecificlist').addEventListener("click", () => {
         }
   
      
-        var inputfruit = document.getElementById('fruitorlegume').value;
+        // var inputfruit = document.getElementById('fruitorlegume').value;
   
      
-        if (radioChecked && inputfruit.trim() !== '') {
+        if (radioChecked && inputfruit.value.trim() !== '') {
             if(radios[0].checked){
                 let data=`  <div class="alert alert-success" role="alert">
-            <span>${inputfruit}</span></div>`;
+                <span>${radios[0].value} -</span>
+            <span class="spanfruit">${inputfruit.value} </span></div>`;
             fruit.innerHTML +=data;        
             }else{
                 let data=`  <div class="alert alert-info" role="alert">
-                <span>${inputfruit}</span></div>`;
+                 <span>${radios[1].value} -</span>
+                <span class="spanlist">${inputfruit.value} </span></div>`;
                 legume.innerHTML +=data;
             }
            
@@ -61,15 +63,16 @@ document.getElementById('addgenerallist').addEventListener("click", () => {
       }
     }
 
-    var inputfruit = document.getElementById('fruitorlegume').value;
+    // var inputfruit = document.getElementById('fruitorlegume').value;
 
    
-    if (radioChecked && inputfruit.trim() !== '') {
-        // if(radios[0].checked ){
+    if (radioChecked && inputfruit.value.trim() !== '') {
+        if(radios[i].checked ){
             let data=`  <div class="alert alert-warning" role="alert">
-        <span>${inputfruit}</span></div>`;
+             <span>${radios[i].value} -</span>
+        <span class="spanlist">${inputfruit.value}</span></div>`;
         fruitorlegumediv.innerHTML +=data;        
-        // }
+        }
        
     
 
